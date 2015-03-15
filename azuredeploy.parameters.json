@@ -3,19 +3,19 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "newStorageAccountName": {
-            "value": "uniquestorageaccount"
+            "value": "coreystore9967"
         },
         "adminUsername": {
-            "value": "vmUserName"
+            "value": "corey"
         },
         "adminPassword": {
-            "value": "vmPassword"
+            "value": "coreyPass!"
         },
         "dnsName": {
-            "value": "uniquednsname"
+            "value": "coreydns9967"
         },
         "subscriptionId": {
-            "value": ""
-        },
+            "value": "79d35904-6ebb-471a-93c0-4e81261b8077"
+        }
    }
 }

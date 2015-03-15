@@ -83,12 +83,17 @@
         "dnsName": {
             "type": "string"
         },
+        "nicName": {
+            "type": "string",
+            "defaultValue": "myVMNic"                  
+        },
         "subscriptionId": {
             "type": "string"
         }
     },
     "variables": {
         "vmSourceImageName": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-15_04-amd64-server-20150120.1-alpha2-en-us-30GB",
+        "extensionName": "DockerExtension",
         "sourceImageName": "[concat('/',parameters('subscriptionId'),'/services/images/',variables('vmSourceImageName'))]",
         "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',parameters('virtualNetworkName'))]",
         "subnet1Ref": "[concat(variables('vnetID'),'/subnets/',parameters('subnet1Name'))]"
@@ -203,7 +208,7 @@
         },
         {
             "type": "Microsoft.Compute/virtualMachines/extensions",
-            "name": "[concat(parameters('vmName'),'/', parameters('extensionName'))]",
+            "name": "[concat(parameters('vmName'),'/setupscript')]",
             "apiVersion": "2014-12-01-preview",
             "location": "[parameters('location')]",
             "dependsOn": [
@@ -215,9 +220,9 @@
                 "typeHandlerVersion": "1.1",
                 "settings": {
                     "fileUris": [
-                        "https://github.com/coreysa/ubuntu-azure-dev-vm/releases/download/v1/mongoinstall.sh"
+                        "https://github.com/coreysa/ubuntu-azure-dev-vm/releases/download/v1/azureToolsInstall.sh"
                     ],
-                    "commandToExecute": "sh mongoinstall.sh"
+                    "commandToExecute": "sh azureToolsInstall.sh"
                 }
             }
         }
