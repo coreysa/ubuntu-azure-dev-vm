@@ -1,8 +1,8 @@
-# Deploy Docker Container
+# Deploy Ubuntu VM with Azure tooling
 
 
 | Deploy to Azure  | Author                          | Template Name   | Description     | 
 |:-----------------|:--------------------------------| :---------------| :---------------|
-| <a href="https://azuredeploy.net/?repository=https://github.com/coreysa/deploy-docker-container" target="_blank"><img src="http://azuredeploy.net/deploybutton.png"/></a> | [coreysa](https://github.com/coreysa) | [Deploy Docker Hub](https://github.com/coreysa/deploy-docker-container) | This template allows you to deploy a Docker container from DockerHub using Compose. 
+| <a href="https://azuredeploy.net/?repository=https://github.com/coreysa/ubuntu-azure-dev-vm" target="_blank"><img src="http://azuredeploy.net/deploybutton.png"/></a> | [coreysa](https://github.com/coreysa) | [Deploy Ubuntu Azure Dev VM](https://github.com/coreysa/ubuntu-azure-dev-vm) | This template deploys an Ubuntu VM with the Azure Dev tools installed including node.js.  
 
 
