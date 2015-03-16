@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "newStorageAccountName": {
-            "value": "coreystore9967"
+            "value": "coreystorescript8"
         },
         "adminUsername": {
             "value": "corey"
@@ -12,7 +12,7 @@
             "value": "coreyPass!"
         },
         "dnsName": {
-            "value": "coreydns9967"
+            "value": "coreydnsscript8"
         },
         "subscriptionId": {
             "value": "79d35904-6ebb-471a-93c0-4e81261b8077"

@@ -34,7 +34,7 @@
         },
         "vmName": {
             "type": "string",
-            "defaultValue": "MyDeveloperVM"
+            "defaultValue": "MyUbuntuDeveloperVM"
         },
         "vmSize": {
             "type": "string",
@@ -64,21 +64,13 @@
             "type": "string",
             "defaultValue": "10.0.0.0/16"
         },
-        "subnet1Name": {
+        "subnetName": {
             "type": "string",
-            "defaultValue": "Subnet-1"
+            "defaultValue": "Subnet"
         },
-        "subnet2Name": {
-            "type": "string",
-            "defaultValue": "Subnet-2"
-        },
-        "subnet1Prefix": {
+        "subnetPrefix": {
             "type": "string",
             "defaultValue": "10.0.0.0/24"
-        },
-        "subnet2Prefix": {
-            "type": "string",
-            "defaultValue": "10.0.1.0/24"
         },
         "dnsName": {
             "type": "string"
@@ -93,10 +85,9 @@
     },
     "variables": {
         "vmSourceImageName": "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-15_04-amd64-server-20150120.1-alpha2-en-us-30GB",
-        "extensionName": "DockerExtension",
         "sourceImageName": "[concat('/',parameters('subscriptionId'),'/services/images/',variables('vmSourceImageName'))]",
         "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',parameters('virtualNetworkName'))]",
-        "subnet1Ref": "[concat(variables('vnetID'),'/subnets/',parameters('subnet1Name'))]"
+        "subnetRef": "[concat(variables('vnetID'),'/subnets/',parameters('subnetName'))]"
     },    
     "resources": [
         {
@@ -133,15 +124,9 @@
                 },
                 "subnets": [
                     {
-                        "name": "[parameters('subnet1Name')]",
+                        "name": "[parameters('subnetName')]",
                         "properties": {
-                            "addressPrefix": "[parameters('subnet1Prefix')]"
-                        }
-                    },
-                    {
-                        "name": "[parameters('subnet2Name')]",
-                        "properties": {
-                            "addressPrefix": "[parameters('subnet2Prefix')]"
+                            "addressPrefix": "[parameters('subnetPrefix')]"
                         }
                     }
                 ]
@@ -166,7 +151,7 @@
                                 "id": "[resourceId('Microsoft.Network/publicIPAddresses',parameters('publicIPAddressName'))]"
                             },
                             "subnet": {
-                                "id": "[variables('subnet1Ref')]"
+                                "id": "[variables('subnetRef')]"
                             }
                         }
                     }
@@ -217,7 +202,7 @@
             "properties": {
                 "publisher": "Microsoft.OSTCExtensions",
                 "type": "CustomScriptForLinux",
-                "typeHandlerVersion": "1.1",
+                "typeHandlerVersion": "1.2",
                 "settings": {
                     "fileUris": [
                         "https://github.com/coreysa/ubuntu-azure-dev-vm/releases/download/v1/azureToolsInstall.sh"

@@ -1,14 +1,13 @@
-# Installing Node.js for newer distros
-# sudo apt-get install nodejs-legacy
-# sudo apt-get install -y npm
-# sudo npm install -g azure-cli
+# Prepare the machine
+apt-get -y update
+apt-get install -y curl
 
-# Installing Node.js for older distors
-sudo apt-get install curl
+# Installing Node
 curl -sL https://deb.nodesource.com/setup | sudo bash -
-sudo apt-get install -y nodejs
-sudo apt-get install -y npm
-sudo npm install -g azure-cli
+apt-get install -y nodejs-legacy
+apt-get install -y nodejs
+apt-get install -y npm
 
-sudo mkdir /home/corey/coreytest
-
+# Installing the azure CLI
+npm install -g azure-cli
+azure
