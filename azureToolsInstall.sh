@@ -10,4 +10,3 @@ apt-get install -y npm
 
 # Installing the azure CLI
 npm install -g azure-cli
-azure
